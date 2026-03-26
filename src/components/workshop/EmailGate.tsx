@@ -17,10 +17,10 @@ export function EmailGate() {
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="max-w-md w-full text-center">
         <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mb-4">
-          Free Workshop
+          Free Crash Course
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-          The Revenue <em className="text-primary">Leak</em> Workshop
+          The Revenue <em className="text-primary">Leak</em> Crash Course
         </h1>
         <p className="text-muted-foreground text-sm mb-8 max-w-sm mx-auto">
           Discover where money, time, and energy are quietly draining from your business — and get a personalised leak report at the end.
@@ -51,7 +51,7 @@ export function EmailGate() {
               type="submit"
               className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
             >
-              Start the Workshop <ArrowRight className="w-4 h-4" />
+              Start the Crash Course <ArrowRight className="w-4 h-4" />
             </button>
           </form>
           <p className="text-[10px] text-muted-foreground text-center mt-3">

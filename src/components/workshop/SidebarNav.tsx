@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BookOpen, DollarSign, Clock, Settings, CalendarDays, TrendingDown } from "lucide-react";
+import { useWorkshop } from "@/lib/workshopContext";
 
 const navItems = [
   { id: "module-00", label: "Welcome", icon: BookOpen },
@@ -12,13 +13,15 @@ const navItems = [
 
 export function SidebarNav() {
   const [activeId, setActiveId] = useState("module-00");
+  const { getLeakReport, state } = useWorkshop();
+  const report = getLeakReport();
+  const answeredCount = state.answers.length;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.filter((e) => e.isIntersecting);
         if (visible.length > 0) {
-          // Pick the one closest to the top
           visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
           setActiveId(visible[0].target.id);
         }
@@ -45,7 +48,7 @@ export function SidebarNav() {
           Off-Script
         </h1>
         <p className="text-[10px] uppercase tracking-[0.2em] text-secondary-foreground/60 mt-1">
-          Revenue Leak Workshop
+          Revenue Leak Crash Course
         </p>
       </div>
 
@@ -66,8 +69,41 @@ export function SidebarNav() {
         ))}
       </nav>
 
+      {/* Live Leak Score */}
+      {answeredCount > 0 && (
+        <div className="mx-3 mb-3 rounded-lg bg-primary/10 border border-primary/20 p-3">
+          <p className="text-[9px] uppercase tracking-wider text-primary font-semibold mb-2">
+            Your Leak Score
+          </p>
+          <div className="text-2xl font-bold text-primary" style={{ fontFamily: "'Playfair Display', serif" }}>
+            ${report.estimatedMonthlyLeak.toLocaleString()}
+            <span className="text-[10px] font-normal text-secondary-foreground/60">/mo</span>
+          </div>
+          <div className="mt-2 space-y-1.5">
+            {[
+              { label: "💰", pct: report.money.percentage, color: "bg-primary" },
+              { label: "⏱", pct: report.time.percentage, color: "bg-amber-500" },
+              { label: "⚙️", pct: report.systems.percentage, color: "bg-emerald-600" },
+            ].map(({ label, pct, color }) => (
+              <div key={label} className="flex items-center gap-1.5">
+                <span className="text-[10px] w-4">{label}</span>
+                <div className="flex-1 h-1.5 bg-secondary-foreground/10 rounded-full overflow-hidden">
+                  <div
+                    className={`h-full rounded-full transition-all duration-700 ${color}`}
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-[9px] text-secondary-foreground/50 mt-2">
+            {answeredCount}/9 questions answered
+          </p>
+        </div>
+      )}
+
       <div className="p-4 text-[10px] text-secondary-foreground/40">
-        © Off-Script Workshop
+        © Off-Script Crash Course
       </div>
     </aside>
   );

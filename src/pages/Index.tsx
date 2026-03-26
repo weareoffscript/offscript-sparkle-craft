@@ -1,16 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { SidebarNav } from "@/components/workshop/SidebarNav";
+import { Module00 } from "@/components/modules/Module00";
+import { Module01 } from "@/components/modules/Module01";
+import { Module02 } from "@/components/modules/Module02";
+import { Module03 } from "@/components/modules/Module03";
+import { ThirtyDayPlan } from "@/components/modules/ThirtyDayPlan";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="flex min-h-screen">
+      <SidebarNav />
+      <main className="flex-1 ml-[200px] workshop-content">
+        <div className="max-w-2xl mx-auto px-8 py-8">
+          <Module00 />
+          <Module01 />
+          <Module02 />
+          <Module03 />
+          <ThirtyDayPlan />
+        </div>
+      </main>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;

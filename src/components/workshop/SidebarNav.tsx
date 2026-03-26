@@ -45,7 +45,7 @@ export function SidebarNav() {
           Off-Script
         </h1>
         <p className="text-[10px] uppercase tracking-[0.2em] text-secondary-foreground/60 mt-1">
-          Revenue Leak Workshop
+          Revenue Leak Crash Course
         </p>
       </div>
 
@@ -67,7 +67,7 @@ export function SidebarNav() {
       </nav>
 
       <div className="p-4 text-[10px] text-secondary-foreground/40">
-        © Off-Script Workshop
+        © Off-Script Crash Course
       </div>
     </aside>
   );

@@ -11,7 +11,7 @@ export function Module00() {
       <ModuleHeader
         moduleLabel="MODULE 00 — START HERE"
         title="Welcome to the"
-        italicTitle="Revenue Leak Workshop"
+        italicTitle="Revenue Leak Crash Course"
         subtitle="Most businesses don't have a revenue problem. They have a leak problem. Money, time, and energy are draining out of systems you built — and you can't always see where."
         time="5 min"
         hasWorkbook
@@ -22,7 +22,7 @@ export function Module00() {
       </CalloutBox>
 
       <ContentSection heading="What this is">
-        <p>This workshop walks you through the three most common types of revenue leaks in service-based and digital businesses:</p>
+        <p>This crash course walks you through the three most common types of revenue leaks in service-based and digital businesses:</p>
         <ul className="list-none space-y-2 mt-3">
           <li className="flex items-start gap-2">
             <span className="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0" />
@@ -65,7 +65,7 @@ export function Module00() {
       <WorkbookSection items={[
         "Read the welcome module",
         "Complete the opening reflection",
-        "Set aside 2 hours for the full workshop",
+        "Set aside 2 hours for the full crash course",
       ]} />
 
       <NextModule targetId="module-01" label="Next: Money Leaks →" />

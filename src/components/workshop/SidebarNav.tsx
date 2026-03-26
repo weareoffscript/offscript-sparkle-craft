@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BookOpen, DollarSign, Clock, Settings, CalendarDays } from "lucide-react";
+import { BookOpen, DollarSign, Clock, Settings, CalendarDays, TrendingDown } from "lucide-react";
 
 const navItems = [
   { id: "module-00", label: "Welcome", icon: BookOpen },
@@ -7,6 +7,7 @@ const navItems = [
   { id: "module-02", label: "Time & Complexity", icon: Clock },
   { id: "module-03", label: "System & Asset Leaks", icon: Settings },
   { id: "thirty-day-plan", label: "Your 30-Day Plan", icon: CalendarDays },
+  { id: "leak-report", label: "Your Leak Report", icon: TrendingDown },
 ];
 
 export function SidebarNav() {

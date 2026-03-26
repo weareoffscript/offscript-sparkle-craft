@@ -4,8 +4,16 @@ import { Module01 } from "@/components/modules/Module01";
 import { Module02 } from "@/components/modules/Module02";
 import { Module03 } from "@/components/modules/Module03";
 import { ThirtyDayPlan } from "@/components/modules/ThirtyDayPlan";
+import { EmailGate } from "@/components/workshop/EmailGate";
+import { WorkshopProvider, useWorkshop } from "@/lib/workshopContext";
 
-const Index = () => {
+function WorkshopContent() {
+  const { state } = useWorkshop();
+
+  if (!state.isGated) {
+    return <EmailGate />;
+  }
+
   return (
     <div className="flex min-h-screen">
       <SidebarNav />
@@ -19,6 +27,14 @@ const Index = () => {
         </div>
       </main>
     </div>
+  );
+}
+
+const Index = () => {
+  return (
+    <WorkshopProvider>
+      <WorkshopContent />
+    </WorkshopProvider>
   );
 };
 

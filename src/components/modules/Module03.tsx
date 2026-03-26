@@ -4,6 +4,7 @@ import { ContentSection } from "../workshop/ContentSection";
 import { ReflectionPrompt } from "../workshop/ReflectionPrompt";
 import { WorkbookSection } from "../workshop/WorkbookSection";
 import { NextModule } from "../workshop/NextModule";
+import { DiagnosticQuestion } from "../workshop/DiagnosticQuestion";
 
 export function Module03() {
   return (
@@ -68,6 +69,42 @@ export function Module03() {
       <CalloutBox>
         <p><strong>Quick check:</strong> Open your Google Drive, Notion, or file system. How many documents, templates, or frameworks have you created that no one else has ever seen? That's your asset leak.</p>
       </CalloutBox>
+
+      <DiagnosticQuestion
+        questionId="systems-onboarding"
+        category="systems"
+        question="Do you have a documented onboarding and offboarding process for clients?"
+        options={[
+          { label: "Yes — both are systematised", value: "both", score: 0 },
+          { label: "I have onboarding but no offboarding", value: "partial", score: 1 },
+          { label: "It's ad-hoc — different for every client", value: "adhoc", score: 2 },
+          { label: "Neither — I wing it every time", value: "none", score: 3 },
+        ]}
+      />
+
+      <DiagnosticQuestion
+        questionId="systems-repurpose"
+        category="systems"
+        question="How often do you repurpose existing content or assets into new formats?"
+        options={[
+          { label: "Regularly — I have a repurposing system", value: "regularly", score: 0 },
+          { label: "Occasionally — when I remember", value: "sometimes", score: 1 },
+          { label: "Rarely — most content is one-and-done", value: "rarely", score: 2 },
+          { label: "Never — everything starts from scratch", value: "never", score: 3 },
+        ]}
+      />
+
+      <DiagnosticQuestion
+        questionId="systems-tools"
+        category="systems"
+        question="How many paid tools/subscriptions do you use monthly?"
+        options={[
+          { label: "Less than 5 — lean and intentional", value: "lean", score: 0 },
+          { label: "5–10 — some overlap but manageable", value: "moderate", score: 1 },
+          { label: "10+ — and I'm not sure I use them all", value: "many", score: 2 },
+          { label: "I've lost count — I keep finding charges I forgot about", value: "excessive", score: 3 },
+        ]}
+      />
 
       <ReflectionPrompt question="List 3 things you've already built (frameworks, templates, processes) that could be turned into a product, lead magnet, or repeatable system." />
 

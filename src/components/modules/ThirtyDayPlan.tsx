@@ -2,6 +2,7 @@ import { ModuleHeader } from "../workshop/ModuleHeader";
 import { ContentSection } from "../workshop/ContentSection";
 import { WorkbookSection } from "../workshop/WorkbookSection";
 import { CalloutBox } from "../workshop/CalloutBox";
+import { LeakReport } from "../workshop/LeakReport";
 
 export function ThirtyDayPlan() {
   return (
@@ -100,12 +101,7 @@ export function ThirtyDayPlan() {
         <p><strong>You've finished the workshop.</strong> The difference between people who plug leaks and people who don't isn't knowledge — it's action. You now have both. Go use them.</p>
       </CalloutBox>
 
-      <div className="mt-12 text-center">
-        <p className="text-sm text-muted-foreground mb-3">Want to go deeper?</p>
-        <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
-          Book a Revenue Leak Audit →
-        </button>
-      </div>
+      <LeakReport />
     </section>
   );
 }

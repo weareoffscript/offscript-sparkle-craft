@@ -98,7 +98,7 @@ export function ThirtyDayPlan() {
       />
 
       <CalloutBox variant="highlight">
-        <p><strong>You've finished the workshop.</strong> The difference between people who plug leaks and people who don't isn't knowledge — it's action. You now have both. Go use them.</p>
+        <p><strong>You've finished the crash course.</strong> The difference between people who plug leaks and people who don't isn't knowledge — it's action. You now have both. Go use them.</p>
       </CalloutBox>
 
       <LeakReport />

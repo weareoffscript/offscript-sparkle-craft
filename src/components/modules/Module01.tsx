@@ -4,6 +4,7 @@ import { ContentSection } from "../workshop/ContentSection";
 import { ReflectionPrompt } from "../workshop/ReflectionPrompt";
 import { WorkbookSection } from "../workshop/WorkbookSection";
 import { NextModule } from "../workshop/NextModule";
+import { DiagnosticQuestion } from "../workshop/DiagnosticQuestion";
 
 export function Module01() {
   return (
@@ -99,6 +100,42 @@ export function Module01() {
           </div>
         </div>
       </ContentSection>
+
+      <DiagnosticQuestion
+        questionId="money-pricing"
+        category="money"
+        question="When did you last raise your prices?"
+        options={[
+          { label: "Within the last 6 months", value: "recent", score: 0 },
+          { label: "6–12 months ago", value: "moderate", score: 1 },
+          { label: "Over a year ago", value: "long", score: 2 },
+          { label: "I've never raised them", value: "never", score: 3 },
+        ]}
+      />
+
+      <DiagnosticQuestion
+        questionId="money-scope"
+        category="money"
+        question="How often do you do work outside the agreed scope without charging for it?"
+        options={[
+          { label: "Rarely — I'm strict about boundaries", value: "rarely", score: 0 },
+          { label: "Sometimes — a quick favour here and there", value: "sometimes", score: 1 },
+          { label: "Often — it just happens", value: "often", score: 2 },
+          { label: "Constantly — scope creep is my default", value: "always", score: 3 },
+        ]}
+      />
+
+      <DiagnosticQuestion
+        questionId="money-upsell"
+        category="money"
+        question="Do you have an upsell, cross-sell, or 'what's next' after delivering to a client?"
+        options={[
+          { label: "Yes — a clear next step for every client", value: "yes", score: 0 },
+          { label: "Sometimes — depends on the client", value: "sometimes", score: 1 },
+          { label: "Rarely — I don't really think about it", value: "rarely", score: 2 },
+          { label: "Never — clients just leave", value: "never", score: 3 },
+        ]}
+      />
 
       <ReflectionPrompt question="Look at your last 3 clients. Where did you give away time, energy, or value that wasn't scoped or paid for?" />
 

@@ -4,6 +4,7 @@ import { ContentSection } from "../workshop/ContentSection";
 import { ReflectionPrompt } from "../workshop/ReflectionPrompt";
 import { WorkbookSection } from "../workshop/WorkbookSection";
 import { NextModule } from "../workshop/NextModule";
+import { DiagnosticQuestion } from "../workshop/DiagnosticQuestion";
 
 export function Module02() {
   return (
@@ -69,6 +70,42 @@ export function Module02() {
       <CalloutBox>
         <p>Complexity isn't a sign of sophistication. It's usually a sign that something hasn't been simplified yet. Every layer of complexity is a potential leak.</p>
       </CalloutBox>
+
+      <DiagnosticQuestion
+        questionId="time-hours"
+        category="time"
+        question="How much of your work week is spent on revenue-generating activities?"
+        options={[
+          { label: "60%+ — most of my time drives revenue", value: "high", score: 0 },
+          { label: "40–60% — decent but could be better", value: "moderate", score: 1 },
+          { label: "20–40% — most time goes to admin and overhead", value: "low", score: 2 },
+          { label: "Under 20% — I'm always busy but never selling", value: "very-low", score: 3 },
+        ]}
+      />
+
+      <DiagnosticQuestion
+        questionId="time-content"
+        category="time"
+        question="How much time do you spend perfecting content before publishing?"
+        options={[
+          { label: "I batch and publish quickly — done > perfect", value: "efficient", score: 0 },
+          { label: "I spend a bit longer than I should", value: "slightly-over", score: 1 },
+          { label: "I often rework things 3+ times before posting", value: "rework", score: 2 },
+          { label: "I have drafts full of things I never published", value: "stuck", score: 3 },
+        ]}
+      />
+
+      <DiagnosticQuestion
+        questionId="time-sops"
+        category="time"
+        question="Do you have written SOPs or checklists for your recurring tasks?"
+        options={[
+          { label: "Yes, for most things", value: "most", score: 0 },
+          { label: "A few, but not consistent", value: "some", score: 1 },
+          { label: "Almost none — I figure it out each time", value: "none", score: 2 },
+          { label: "What's an SOP?", value: "unknown", score: 3 },
+        ]}
+      />
 
       <ReflectionPrompt question="Track your time for one day. What percentage falls into each bucket? Where's the biggest gap between where your time goes and where it should go?" />
 

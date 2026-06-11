@@ -43,7 +43,7 @@ export function WorkshopProvider({ children }: { children: ReactNode }) {
     if (saved) {
       try { return JSON.parse(saved); } catch { /* ignore */ }
     }
-    return { email: "", name: "", isGated: false, answers: [], checkedItems: {} };
+    return { email: "", name: "", isGated: true, answers: [], checkedItems: {} };
   });
 
   const persist = (newState: WorkshopState) => {

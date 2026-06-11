@@ -55,6 +55,10 @@ export function WorkshopProvider({ children }: { children: ReactNode }) {
     persist({ ...state, name, email, isGated: true });
   };
 
+  const skipGate = () => {
+    persist({ ...state, isGated: true });
+  };
+
   const addAnswer = (answer: DiagnosticAnswer) => {
     const filtered = state.answers.filter(a => a.questionId !== answer.questionId);
     persist({ ...state, answers: [...filtered, answer] });

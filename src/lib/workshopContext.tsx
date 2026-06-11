@@ -110,7 +110,7 @@ export function WorkshopProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <WorkshopContext.Provider value={{ state, setEntry, addAnswer, getAnswer, setCheckedItems, getLeakReport }}>
+    <WorkshopContext.Provider value={{ state, setEntry, skipGate, addAnswer, getAnswer, setCheckedItems, getLeakReport }}>
       {children}
     </WorkshopContext.Provider>
   );

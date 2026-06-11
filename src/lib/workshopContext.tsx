@@ -18,6 +18,7 @@ interface WorkshopState {
 interface WorkshopContextType {
   state: WorkshopState;
   setEntry: (name: string, email: string) => void;
+  skipGate: () => void;
   addAnswer: (answer: DiagnosticAnswer) => void;
   getAnswer: (questionId: string) => DiagnosticAnswer | undefined;
   setCheckedItems: (sectionKey: string, checked: boolean[]) => void;

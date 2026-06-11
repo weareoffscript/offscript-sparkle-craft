@@ -18,6 +18,7 @@ interface WorkshopState {
 interface WorkshopContextType {
   state: WorkshopState;
   setEntry: (name: string, email: string) => void;
+  skipGate: () => void;
   addAnswer: (answer: DiagnosticAnswer) => void;
   getAnswer: (questionId: string) => DiagnosticAnswer | undefined;
   setCheckedItems: (sectionKey: string, checked: boolean[]) => void;
@@ -52,6 +53,10 @@ export function WorkshopProvider({ children }: { children: ReactNode }) {
 
   const setEntry = (name: string, email: string) => {
     persist({ ...state, name, email, isGated: true });
+  };
+
+  const skipGate = () => {
+    persist({ ...state, isGated: true });
   };
 
   const addAnswer = (answer: DiagnosticAnswer) => {
@@ -105,7 +110,7 @@ export function WorkshopProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <WorkshopContext.Provider value={{ state, setEntry, addAnswer, getAnswer, setCheckedItems, getLeakReport }}>
+    <WorkshopContext.Provider value={{ state, setEntry, skipGate, addAnswer, getAnswer, setCheckedItems, getLeakReport }}>
       {children}
     </WorkshopContext.Provider>
   );

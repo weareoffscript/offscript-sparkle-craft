@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useWorkshop } from "@/lib/workshopContext";
 
 export function EmailGate() {
-  const { setEntry } = useWorkshop();
+  const { setEntry, skipGate } = useWorkshop();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -57,6 +57,15 @@ export function EmailGate() {
           <p className="text-[10px] text-muted-foreground text-center mt-3">
             No spam · Takes about 45 minutes · 100% free
           </p>
+          <div className="mt-3 text-center">
+            <button
+              type="button"
+              onClick={skipGate}
+              className="text-[10px] text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors"
+            >
+              Preview without email
+            </button>
+          </div>
         </div>
       </div>
     </div>

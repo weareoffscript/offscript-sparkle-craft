@@ -1,65 +1,41 @@
+# Export Plan — Full Source Code
 
+## Goal
+Get the complete crash course codebase out of Lovable so it can be hosted or developed anywhere (GitHub, Vercel, Netlify, your own server, or a local machine).
 
-# Off-Script Workshop — Build Plan
+## What's in the code
+A standard React + TypeScript + Vite + Tailwind project. No Lovable-specific lock-in in the code itself — it builds with `npm install` + `npm run build` and the output is plain static files that any web host can serve.
 
-## Overview
-A single-page workshop experience with sidebar navigation, 5 sections (Module 00–03 + 30-Day Plan), warm earthy design, and interactive reflection prompts.
+## Option A — Connect to GitHub (recommended)
+Best if you want to keep developing, use version history, or deploy to Vercel/Netlify.
 
-## Design System
-- **Dark olive/green sidebar** with warm cream/tan content area
-- **Serif headings** (e.g., Playfair Display) with italic accent text in a warm orange/copper color
-- **Body text** in a clean sans-serif, dark brown/charcoal
-- **Accent color**: warm orange (#D4845A-ish) for highlights, bullet dots, and italic headings
-- **Blockquotes** with left gold/amber border on cream background
+1. In the Lovable editor, open the **Plus (+) menu** in the chat input → **GitHub** → **Connect project**.
+2. Authorize the Lovable GitHub App and pick the account/organization.
+3. Click **Create Repository** — your full code syncs there automatically and stays in sync both ways.
+4. From GitHub: **Code → Download ZIP**, or `git clone` the repo.
 
-## Layout
-- **Fixed left sidebar** (~180px): "Off-Script" branding + "REVENUE LEAK WORKSHOP" subtitle, navigation links with icons (Welcome, Money Leaks, Time & Complexity, System & Asset Leaks, Your 30-Day Plan), active state highlighted
-- **Scrollable main content area**: each module rendered as a long-scroll page, clicking sidebar links scrolls to that section
+## Option B — Download codebase directly
+Fastest if you just want a ZIP right now.
 
-## Sections to Build
+1. Open the project in the Lovable editor on desktop.
+2. Open the **Code Editor** (file tree view).
+3. Click **Download codebase** at the bottom of the file tree sidebar.
+   (Requires a paid workspace.)
 
-### Module 00 — Welcome
-- Hero with "MODULE 00 — START HERE" label, large heading with italic styling
-- Subtitle paragraph, time badge (⏱ 5 min) + workbook badge
-- Blockquote callout ("No videos. Deliberately...")
-- "What this is" + "How this works" sections with styled bullet list
-- Reflection prompt with text input + "Send →" button
-- Workbook checklist section
+## Running it elsewhere
+After you have the code:
 
-### Module 01 — Money Leaks
-- Structured content: 3 types of money leaks with sub-bullets
-- Example callout box
-- 4 rules with bold labels
-- Reflection prompt + workbook section
+```text
+npm install      # install dependencies
+npm run dev      # local dev server (port 8080)
+npm run build    # production build → dist/ folder
+```
 
-### Module 02 — Time & Complexity Leaks
-- 3-bucket breakdown, waste examples
-- Highlight boxes for "time should be here" vs "if it's here instead"
-- Reflection prompt + workbook section
+Deploy the `dist/` folder (or connect the repo) to any static host: Vercel, Netlify, Cloudflare Pages, GitHub Pages, or your own server.
 
-### Module 03 — System & Asset Leaks
-- System gaps and asset waste lists
-- Highlight boxes for key rules
-- Quick check callout
-- Reflection prompt + workbook section
+## Prep work I'll do in this project
+- Write a proper `README.md` replacing the template placeholder — covering what the app is, how to install/run/build, and the project structure — so the repo is self-explanatory wherever it lands.
 
-### Your 30-Day Plan
-- 4-week plan structure (Week 1–4)
-- Workbook checklist
-- Optional next step CTA
-
-## Interactivity
-- Sidebar navigation highlights active section based on scroll position
-- Smooth scroll to sections on sidebar click
-- Reflection text inputs with styled "Send →" buttons (toast confirmation on submit)
-- Section dividers between modules with "Next module →" links
-
-## Components
-1. **WorkshopLayout** — sidebar + main content wrapper
-2. **SidebarNav** — navigation with scroll-spy active state
-3. **ModuleHeader** — module label, title, subtitle, badges
-4. **ReflectionPrompt** — styled text input with submit
-5. **WorkbookSection** — styled checklist
-6. **ContentSection** — label + heading + body for sub-sections
-7. **CalloutBox** — blockquote/highlight styling
-
+## Notes
+- The app stores workshop progress in the browser (localStorage) — no backend or database to migrate.
+- The PDF/text exports already in your Files are separate deliverables, not part of the codebase.

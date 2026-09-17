@@ -1,26 +1,32 @@
-# Offscript Magic
+# Revenue Leak Crash Course
 
-can you build this https://offscriptworkshop.netlify.app/
+An interactive workshop that diagnoses where a business is leaking money, time, and systems capacity, and generates a personalized leak report at the end.
 
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://offscript-sparkle-craft.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/0f0051f7-ad59-4d29-baab-7c02e94d5184).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+A React + TypeScript + Vite + Tailwind (shadcn/ui) single-page app. No backend — workshop progress and answers are kept in browser state.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need Node.js (see `package.json` engines / `.nvmrc` if present) and npm.
 
 ```sh
 git clone <this-repository-url>
-cd <repository-name>
+cd offscript-sparkle-craft
 npm i
 npm run dev
 ```
+
+The dev server runs at http://localhost:8080.
+
+## Scripts
+
+- `npm run dev` — start the Vite dev server
+- `npm run build` — production build to `dist/`
+- `npm run build:dev` — development-mode build
+- `npm run lint` — run ESLint
+- `npm run preview` — preview the production build locally
+- `npm test` — run the Vitest unit test suite
+- `npm run test:watch` — run Vitest in watch mode
+
+## Deployment
+
+`npm run build` produces static files in `dist/` that can be deployed to any static host (Vercel, Netlify, Cloudflare Pages, GitHub Pages, etc).
